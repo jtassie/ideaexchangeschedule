@@ -330,6 +330,7 @@
                             <goal>compile</goal>
                             <goal>test-compile</goal>
                         </goals>
+                        </goals>
                     </execution>
                 </executions>
                 <configuration>
@@ -577,6 +578,20 @@
 				<executions>
 					<execution>
 						<phase>package</phase>
+						<goals><goal>copy</goal></goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.eclipse.jetty</groupId>
+									<artifactId>jetty-runner</artifactId>
+									<version>9.2.7.v20150116</version>
+									<destFileName>jetty-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+					<execution>
+						<phase>install</phase>
 						<goals><goal>copy</goal></goals>
 						<configuration>
 							<artifactItems>
