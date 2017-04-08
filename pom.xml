@@ -330,7 +330,6 @@
                             <goal>compile</goal>
                             <goal>test-compile</goal>
                         </goals>
-                        </goals>
                     </execution>
                 </executions>
                 <configuration>
@@ -571,25 +570,14 @@
                     </dependency>
                 </dependencies>
             </plugin>
+		</plugins>
+		</pluginManagement>
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.3</version>
 				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals><goal>copy</goal></goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.eclipse.jetty</groupId>
-									<artifactId>jetty-runner</artifactId>
-									<version>9.2.7.v20150116</version>
-									<destFileName>jetty-runner.jar</destFileName>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
 					<execution>
 						<phase>install</phase>
 						<goals><goal>copy</goal></goals>
@@ -607,6 +595,5 @@
 				</executions>
 			</plugin>
         </plugins>
-        </pluginManagement>
     </build>
 </project>
